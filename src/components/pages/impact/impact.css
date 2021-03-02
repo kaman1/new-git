@@ -1,0 +1,5 @@
+.bg-image-impact {
+  background-image: url("../../../assets/images/impact.jpg");
+  background-size: cover;
+  height: 100vh;
+}

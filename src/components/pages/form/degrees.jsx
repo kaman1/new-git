@@ -1,0 +1,36 @@
+export const options = [
+  { label: "North", value: "N" },
+  { label: "Northeast", value: "NE" },
+  { label: "East", value: "E" },
+  { label: "Southeast", value: "SE" },
+  { label: "South", value: "S" },
+  { label: "Southwest", value: "SW" },
+  { label: "West", value: "W" },
+  { label: "Northwest", value: "NW" },
+];
+
+
+export const SelectDegs = [
+  { label: "0", value: "0" },
+  { label: "15", value: "15" },
+  { label: "30", value: "30" },
+  { label: "45", value: "45" },
+  { label: "60", value: "60" },
+  { label: "75", value: "75" },
+  { label: "90", value: "90" },
+  { label: "105", value: "105" },
+  { label: "120", value: "120" },
+  { label: "135", value: "135" },
+  { label: "150", value: "150" },
+  { label: "165", value: "165" },
+  { label: "180", value: "180" },
+  { label: "195", value: "195" },
+  { label: "210", value: "210" },
+  { label: "225", value: "225" },
+  { label: "270", value: "270" },
+  { label: "285", value: "285" },
+  { label: "300", value: "300" },
+  { label: "315", value: "315" },
+  { label: "330", value: "330" },
+  { label: "345", value: "345" },
+];

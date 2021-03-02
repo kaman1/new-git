@@ -1,0 +1,24 @@
+.mapboxgl-popup-close-button {
+  cursor: pointer;
+  background-color: #fff;
+  color: #009266;
+  font-size: 40px;
+  border-radius: 40px;
+  right: -17px;
+  top: -26px;
+  width: 40px;
+}
+
+.mapboxgl-popup-close-button:hover {
+  background-color: orange;
+  color: #009266;
+}
+
+.mapboxgl-popup-content {
+  background-color: transparent;
+  border-radius: 10px;
+  width: 335px;
+  height: 710px;
+  left: 60px;
+  top: -70px;
+}

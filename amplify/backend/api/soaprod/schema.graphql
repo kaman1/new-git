@@ -1,0 +1,25 @@
+type Post
+  @model
+  @aws_iam
+  @aws_cognito_user_pools
+  @key(name: "postByOwner", fields: ["owner"], queryField: "postByOwner")
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: public, provider: iam, operations: [read] }
+      { allow: groups, groups: ["everyone"], operations: [read] }
+    ]
+  ) {
+  id: ID!
+  shipname: String
+  latitude: Float
+  longitude: Float
+  imonumber: String
+  nauticalmile: String
+  bearing: String
+  degree: String
+  image: String
+  owner: String
+  obsvtime: String
+  createdAt: String
+}
