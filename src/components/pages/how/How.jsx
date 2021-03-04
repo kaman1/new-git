@@ -27,7 +27,7 @@ function How() {
           )}
 
           <DescCard my="1rem" bg="blue_100" p="4rem">
-            MANEWA asks users to capture photographs of ships suspected of
+            Over The Horizon asks users to capture photographs of ships suspected of
             engaging in illegal, unreported, and unregulated (IUU) fishing
             activities and to note their own location and the time when the
             photo was captured. Users are also asked to take note of the
@@ -46,10 +46,10 @@ function How() {
             suspected of conducting IUU fishing activities.
             <br />
             <br />
-            The qualitative data and media submitted to MANEWA might be useful
+            The qualitative data and media submitted to Over The Horizon might be useful
             to several key groups, including academics and researchers,
             conservationists and activists, the media, concerned citizens, as
-            well as government enforcement entities. MANEWA expects that
+            well as government enforcement entities. Over The Horizon expects that
             community-submitted information will lead to increased transparency
             of at sea events, more effective maritime law enforcement, greater
             livelihood security for fishermen, and safer seas.

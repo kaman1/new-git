@@ -18,11 +18,11 @@ function Impact() {
         <Container as={Stack}>
           {visible ? (
             <HeadetTitle>
-              <Title as="h4">About MANEWA</Title>
+              <Title as="h4">About Over The Horizon</Title>
             </HeadetTitle>
           ) : (
             <HeadetTitle>
-              <Title as="h3">About MANEWA</Title>
+              <Title as="h3">About Over The Horizon</Title>
             </HeadetTitle>
           )}
 
@@ -43,11 +43,11 @@ function Impact() {
             Zones, and dangerous maneuvers involving multiple ships.
             <br />
             <br />
-            MANEWA, short for “maritime neighborhood watch”, is designed to
+            Over The Horizon, short for “maritime neighborhood watch”, is designed to
             increase transparency of events occurring at sea. Through a process
             known as participatory mapping, it is possible for law-abiding
             individuals to coordinate the detection, identification, and
-            tracking of malign activities. MANEWA facilitates this process
+            tracking of malign activities. Over The Horizon facilitates this process
             through a community-based data collection application that leverages
             users’ existing technology (smartphones with cameras and GPS) in
             order to crowdsource information about events occurring at sea. This
