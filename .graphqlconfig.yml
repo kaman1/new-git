@@ -1,6 +1,6 @@
 projects:
-  soaprod:
-    schemaPath: amplify/backend/api/soaprod/build/schema.graphql
+  soaproduction:
+    schemaPath: amplify/backend/api/soaproduction/build/schema.graphql
     includes:
       - src/graphql/**/*.js
     excludes:
@@ -13,6 +13,3 @@ projects:
         region: us-east-1
         apiId: null
         maxDepth: 2
-extensions:
-  amplify:
-    version: 3

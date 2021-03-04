@@ -67,12 +67,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "soaproduction7bbc75a4PostConfirmation",
+            "soaproduction161ca5d3PostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "soaproduction7bbc75a4PostConfirmation",
+                  "soaproduction161ca5d3PostConfirmation",
                   "-",
                   {
                     "Ref": "env"
@@ -122,12 +122,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "soaproduction7bbc75a4PostConfirmation",
+            "soaproduction161ca5d3PostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "soaproduction7bbc75a4PostConfirmation",
+                  "soaproduction161ca5d3PostConfirmation",
                   "-",
                   {
                     "Ref": "env"

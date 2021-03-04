@@ -1,10 +1,10 @@
 {
-  "AppSyncApiName": "soaprod",
+  "AppSyncApiName": "soaproduction",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
   "AuthCognitoUserPoolId": {
     "Fn::GetAtt": [
-      "authsoaproduction7bbc75a4",
+      "authsoaproduction161ca5d3",
       "Outputs.UserPoolId"
     ]
   }

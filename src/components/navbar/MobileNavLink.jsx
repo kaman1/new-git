@@ -16,6 +16,8 @@ export default function MobileNavLink(props) {
       <MenuToggle isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
       {isOpen && (
         <LinksWrapper>
+          <div style={{ marginTop: 40 }} />
+          <Accessibility setOpen={() => setOpen(!isOpen)} />
           <LinkItem>
             <LinkTo to="/maps" onClick={() => setOpen(!isOpen)}>
               Map
@@ -26,9 +28,6 @@ export default function MobileNavLink(props) {
               Observation Data
             </LinkTo>
           </LinkItem>
-          {/* <LinkItem>
-            <LinkTo to="/form">Submit Report</LinkTo>
-          </LinkItem> */}
           <LinkItem>
             <LinkTo to="/how" onClick={() => setOpen(!isOpen)}>
               How it works
@@ -39,7 +38,6 @@ export default function MobileNavLink(props) {
               Impact
             </LinkTo>
           </LinkItem>
-          <Accessibility setOpen={() => setOpen(!isOpen)} />
         </LinksWrapper>
       )}
     </NavLinksContainer>

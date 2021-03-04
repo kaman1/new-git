@@ -1,29 +1,29 @@
 {
-  "soaprod": {
+  "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-soaproduction-soaprod-225346-authRole",
-      "UnauthRoleArn": "arn:aws:iam::520845062697:role/amplify-soaproduction-soaprod-225346-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::520845062697:role/amplify-soaproduction-soaprod-225346-authRole",
+      "AuthRoleName": "amplify-soaproduction-dev-151550-authRole",
+      "UnauthRoleArn": "arn:aws:iam::520845062697:role/amplify-soaproduction-dev-151550-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::520845062697:role/amplify-soaproduction-dev-151550-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-soaproduction-soaprod-225346-deployment",
-      "UnauthRoleName": "amplify-soaproduction-soaprod-225346-unauthRole",
-      "StackName": "amplify-soaproduction-soaprod-225346",
-      "StackId": "arn:aws:cloudformation:us-east-1:520845062697:stack/amplify-soaproduction-soaprod-225346/667844e0-78af-11eb-9dc6-0a39c55408a9",
-      "AmplifyAppId": "d3b0e0re53ljnd"
+      "DeploymentBucketName": "amplify-soaproduction-dev-151550-deployment",
+      "UnauthRoleName": "amplify-soaproduction-dev-151550-unauthRole",
+      "StackName": "amplify-soaproduction-dev-151550",
+      "StackId": "arn:aws:cloudformation:us-east-1:520845062697:stack/amplify-soaproduction-dev-151550/161fc850-7b94-11eb-821d-0a26b1b748b1",
+      "AmplifyAppId": "d23f0e1ymvabzc"
     },
     "categories": {
       "auth": {
-        "soaproduction7bbc75a4": {}
+        "soaproduction161ca5d3": {}
       },
       "function": {
-        "soaproduction7bbc75a4PostConfirmation": {
-          "deploymentBucketName": "amplify-soaproduction-soaprod-225346-deployment",
-          "s3Key": "amplify-builds/soaproduction7bbc75a4PostConfirmation-79345a3344316558545a-build.zip"
+        "soaproduction161ca5d3PostConfirmation": {
+          "deploymentBucketName": "amplify-soaproduction-dev-151550-deployment",
+          "s3Key": "amplify-builds/soaproduction161ca5d3PostConfirmation-313161736c796d756177-build.zip"
         }
       },
       "hosting": {
         "amplifyhosting": {
-          "appId": "d3b0e0re53ljnd",
+          "appId": "d23f0e1ymvabzc",
           "type": "manual"
         }
       }

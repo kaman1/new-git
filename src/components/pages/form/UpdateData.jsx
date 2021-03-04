@@ -159,10 +159,10 @@ const UpdateData = (props) => {
                     ref={register}
                   />
                   <InputData
-                    label="Nautical Mile"
-                    icon={Navigation}
-                    name="nauticalmile"
-                    defaultValue={props.updatedAt}
+                    label="Observation Time"
+                    icon={AccessTimeIcon}
+                    name="obsvtime"
+                    defaultValue={props.obsvtime}
                     autoComplete="off"
                     ref={register}
                   />

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo2 from "../../assets/images/logo2.png";
+import logow from "../../assets/images/logow.png";
 import { Link } from "react-router-dom";
 
 function Logo(props) {
@@ -8,7 +8,7 @@ function Logo(props) {
     <LogoWrapper>
       <Link to="/">
         <LogoImg>
-          <img src={logo2} alt="Greeland logo" />
+          <img src={logow} alt="Greeland logo" />
         </LogoImg>
       </Link>
     </LogoWrapper>

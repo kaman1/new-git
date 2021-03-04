@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "soaproduction7bbc75a4_identitypool_7bbc75a4",
+    "identityPoolName": "soaproduction161ca5d3_identitypool_161ca5d3",
     "allowUnauthenticatedIdentities": true,
-    "resourceNameTruncated": "soapro7bbc75a4",
-    "userPoolName": "soaproduction7bbc75a4_userpool_7bbc75a4",
+    "resourceNameTruncated": "soapro161ca5d3",
+    "userPoolName": "soaproduction161ca5d3_userpool_161ca5d3",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "soapro7bbc75a4_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "soapro161ca5d3_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "7bbc75a4",
-    "resourceName": "soaproduction7bbc75a4",
+    "sharedId": "161ca5d3",
+    "resourceName": "soaproduction161ca5d3",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -46,16 +46,13 @@
         ]
     },
     "useDefault": "manual",
-    "usernameAttributes": [
-        "email"
-    ],
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
     "dependsOn": [
         {
             "category": "function",
-            "resourceName": "soaproduction7bbc75a4PostConfirmation",
+            "resourceName": "soaproduction161ca5d3PostConfirmation",
             "triggerProvider": "Cognito",
             "attributes": [
                 "Arn",

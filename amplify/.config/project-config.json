@@ -2,7 +2,7 @@
   "providers": [
     "awscloudformation"
   ],
-  "projectName": "SoaProduction",
+  "projectName": "SoaProductionupdate",
   "version": "3.0",
   "frontend": "javascript",
   "javascript": {

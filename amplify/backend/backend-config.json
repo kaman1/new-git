@@ -1,12 +1,12 @@
 {
   "auth": {
-    "soaproduction7bbc75a4": {
+    "soaproduction161ca5d3": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "soaproduction7bbc75a4PostConfirmation",
+          "resourceName": "soaproduction161ca5d3PostConfirmation",
           "triggerProvider": "Cognito",
           "attributes": [
             "Arn",
@@ -17,8 +17,15 @@
       "customAuth": false
     }
   },
+  "function": {
+    "soaproduction161ca5d3PostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "api": {
-    "soaprod": {
+    "soaproduction": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -26,7 +33,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authsoaproduction7bbc75a4"
+              "userPoolId": "authsoaproduction161ca5d3"
             }
           },
           "additionalAuthenticationProviders": [
@@ -38,21 +45,14 @@
       }
     }
   },
-  "function": {
-    "soaproduction7bbc75a4PostConfirmation": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
   "storage": {
-    "SoaProd": {
+    "soaimage": {
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "soaproduction7bbc75a4PostConfirmation",
+          "resourceName": "soaproduction161ca5d3PostConfirmation",
           "attributes": [
             "Name",
             "Arn",

@@ -50,6 +50,7 @@ function Cards() {
                   nauticalmile={items.nauticalmile}
                   bearing={items.bearing}
                   degree={items.degree}
+                  obsvtime={items.obsvtime}
                   latitude={items.latitude}
                   longitude={items.longitude}
                   createdAt={items.createdAt}

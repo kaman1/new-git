@@ -3,15 +3,15 @@
   "modules": [
     "add-to-group"
   ],
-  "parentResource": "soaproduction7bbc75a4",
-  "functionName": "soaproduction7bbc75a4PostConfirmation",
-  "resourceName": "soaproduction7bbc75a4PostConfirmation",
+  "parentResource": "soaproduction161ca5d3",
+  "functionName": "soaproduction161ca5d3PostConfirmation",
+  "resourceName": "soaproduction161ca5d3PostConfirmation",
   "parentStack": "auth",
-  "triggerEnvs": [],
+  "triggerEnvs": "[]",
   "triggerDir": "/Users/tekimax/.nvm/versions/node/v14.15.1/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/PostConfirmation",
   "triggerTemplate": "PostConfirmation.json.ejs",
   "triggerEventPath": "PostConfirmation.event.json",
-  "roleName": "soaproduction7bbc75a4PostConfirmation",
+  "roleName": "soaproduction161ca5d3PostConfirmation",
   "skipEdit": true,
   "GROUP": "everyone",
   "enableCors": false

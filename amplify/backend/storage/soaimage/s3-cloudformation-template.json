@@ -85,19 +85,19 @@
 	
     
     
-        "functionsoaproduction7bbc75a4PostConfirmationName": {
+        "functionsoaproduction161ca5d3PostConfirmationName": {
             "Type": "String",
-            "Default": "functionsoaproduction7bbc75a4PostConfirmationName"
+            "Default": "functionsoaproduction161ca5d3PostConfirmationName"
         },
         
-        "functionsoaproduction7bbc75a4PostConfirmationArn": {
+        "functionsoaproduction161ca5d3PostConfirmationArn": {
             "Type": "String",
-            "Default": "functionsoaproduction7bbc75a4PostConfirmationArn"
+            "Default": "functionsoaproduction161ca5d3PostConfirmationArn"
         },
         
-        "functionsoaproduction7bbc75a4PostConfirmationLambdaExecutionRole": {
+        "functionsoaproduction161ca5d3PostConfirmationLambdaExecutionRole": {
             "Type": "String",
-            "Default": "functionsoaproduction7bbc75a4PostConfirmationLambdaExecutionRole"
+            "Default": "functionsoaproduction161ca5d3PostConfirmationLambdaExecutionRole"
         }
         
         
@@ -229,13 +229,13 @@
                         {
                             "Event": "s3:ObjectCreated:*",
                             "Function": {
-                                "Ref": "functionsoaproduction7bbc75a4PostConfirmationArn"
+                                "Ref": "functionsoaproduction161ca5d3PostConfirmationArn"
                             }
                         },
                         {
                             "Event": "s3:ObjectRemoved:*",
                             "Function": {
-                                "Ref": "functionsoaproduction7bbc75a4PostConfirmationArn"
+                                "Ref": "functionsoaproduction161ca5d3PostConfirmationArn"
                             }
                         }
                     ]
@@ -277,7 +277,7 @@
           "Properties": {
               "Action": "lambda:InvokeFunction",
               "FunctionName": {
-                  "Ref": "functionsoaproduction7bbc75a4PostConfirmationName"
+                  "Ref": "functionsoaproduction161ca5d3PostConfirmationName"
               },
               "Principal": "s3.amazonaws.com",
               "SourceAccount": {
@@ -337,7 +337,7 @@
                 "PolicyName": "amplify-lambda-execution-policy",
                 "Roles": [
                     {
-                        "Ref": "functionsoaproduction7bbc75a4PostConfirmationLambdaExecutionRole"
+                        "Ref": "functionsoaproduction161ca5d3PostConfirmationLambdaExecutionRole"
                     }
                 ],
                 "PolicyDocument": {

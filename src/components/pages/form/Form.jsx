@@ -24,9 +24,10 @@ import { API, graphqlOperation } from "aws-amplify";
 import { createPost } from "../../../graphql/mutations";
 
 import { Link } from "react-router-dom";
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import AccessTimeIcon from "@material-ui/icons/AccessTime";
 
 import awsConfig from "../../../aws-exports";
+import { justifyContent } from "styled-system";
 Amplify.configure(awsConfig);
 
 const {
@@ -39,7 +40,6 @@ function Form() {
   const [bearing, setBearing] = useState(options[0].value);
   const [degree, setDegree] = useState(SelectDegs[0].value);
   const [open, setOpen] = useState(false);
-
 
   const [name, setName] = useState("");
   const [file, setFile] = useState("");
@@ -104,7 +104,6 @@ function Form() {
       console.log(`Error executing mutation: ${error}`);
     }
   };
-  
 
   return (
     <ThemeProvider theme={theme}>
@@ -119,41 +118,91 @@ function Form() {
             <AmplifySignOut />
           </CardTitle>
           <Link to="./edit">
-            <ViewAll>Edit your observations</ViewAll>
+            <ViewAll>View All My Observations</ViewAll>
           </Link>
 
           <Box as="form" onSubmit={handleSubmit(onSubmit)}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              {name ? (
+                <label
+                  for="image_uploads"
+                  style={{
+                    backgroundColor: "green",
+                    color: "#fff",
+                    width: "350px",
+                    height: "50px",
+                    borderRadius: "5px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  Image uploaded 👍
+                </label>
+              ) : (
+                <label
+                  for="image_uploads"
+                  style={{
+                    backgroundColor: "orange",
+                    color: "#fff",
+                    width: "350px",
+                    height: "50px",
+                    borderRadius: "5px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  📸 Upload an image (PNG, JPG)
+                </label>
+              )}
+
+              <div
+                style={{
+                  opacity: 0,
+                }}
+              >
+                <input
+                  multiple
+                  ref={register}
+                  onChange={onChange}
+                  name="image"
+                  type="file"
+                  id="image_uploads"
+                  accept="image/*"
+                />
+              </div>
+            </div>
+
             <InputData
+              icon={MapPin}
+              label="Latitude (eg: 11.523088)"
+              name="latitude"
               ref={register}
-              onChange={onChange}
-              name="image"
-              type="file"
-              id="file-input"
-              accept="image/*"
+            />
+            <InputData
+              icon={MapPin}
+              label="Longitude (eg: 118.933152)"
+              name="longitude"
+              ref={register}
             />
             <InputData
               icon={DirectionsBoatTwoToneIcon}
-              label="Ship Name"
+              label="Ship Name (if Available)"
               name="shipname"
               autoComplete="off"
               defaultValue=""
               ref={register}
             />
             <InputData
-              icon={MapPin}
-              label="Latitude"
-              name="latitude"
-              ref={register}
-            />
-            <InputData
-              icon={MapPin}
-              label="Longitude"
-              name="longitude"
-              ref={register}
-            />
-            <InputData
               icon={Hash}
-              label="IMO"
+              label="IMO (if Available)"
               name="imonumber"
               defaultValue=""
               autoComplete="off"
@@ -161,36 +210,12 @@ function Form() {
             />
             <InputData
               icon={Navigation}
-              label="Nautical Miles"
+              label="Distance from you (NM)"
               name="nauticalmile"
               defaultValue=""
               autoComplete="off"
               ref={register}
             />
-            <InputData
-              icon={AccessTimeIcon}
-              label="Time (eg, H:Min:Time Zone)"
-              name="obsvtime"
-              defaultValue=""
-              autoComplete="off"
-              ref={register}
-            />
-            <InputData
-              label="Date Field"
-              type="date"
-              name="createdAt"
-              defaultValue=""
-              autoComplete="off"
-              ref={register}
-            />
-            {/* <Time>
-              <TimePicker
-                onChange={onTime}
-                value={time}
-                ref={register}
-                defaultValue=""
-              />
-            </Time> */}
 
             <Select
               id="select-id"
@@ -220,6 +245,32 @@ function Form() {
                 ))}
               </SelectList>
             </Select>
+            <div
+              style={{
+                display: "flex",
+                width: "100%",
+                justifyItems: "center",
+                alignItems: "center",
+              }}
+            >
+              <InputTime
+                label="Observed Date"
+                type="date"
+                name="createdAt"
+                defaultValue=""
+                autoComplete="off"
+                ref={register}
+              />
+              <InputTime
+                icon={AccessTimeIcon}
+                label="Time (H:Min)"
+                name="obsvtime"
+                defaultValue=""
+                autoComplete="off"
+                ref={register}
+              />
+            </div>
+
             <SubmitForm type="submit" onClick={(e) => setOpen(true)}>
               Submit observation
             </SubmitForm>
@@ -235,7 +286,6 @@ function Form() {
             onAnimationEnd={() =>
               setTimeout(() => setOpen(false), 1000, refreshPage())
             }
-
           />
         </Container>
       </Wrapper>
@@ -248,6 +298,15 @@ export default withAuthenticator(Form);
 const InputData = styled(Input)`
   border-color: #00296b;
   color: #00296b;
+
+  &:hover {
+    border-color: #00cb8d;
+  }
+`;
+const InputTime = styled(Input)`
+  border-color: #00296b;
+  color: #00296b;
+  width: 100%;
 
   &:hover {
     border-color: #00cb8d;
@@ -303,43 +362,3 @@ const ViewAll = styled(Button)`
   width: auto;
   margin: 20px 0;
 `;
-
-// {
-//   "Version": "2012-10-17",
-//   "Statement": [
-//       {
-//           "Effect": "Allow",
-//           "Principal": "*",
-//           "Action": [
-//               "s3:GetObject",
-//               "s3:PutObject"
-//           ],
-//           "Resource": [
-//               "arn:aws:s3:::soa3final150145-dev/public/*",
-//               "arn:aws:s3:::soa3final150145-dev/private/${cognito-identity.amazonaws.com:sub}/*"
-//           ]
-//       },
-//       {
-//           "Effect": "Allow",
-//           "Principal": "*",
-//           "Action": "s3:PutObject",
-//           "Resource": "arn:aws:s3:::soa3final150145-dev/uploads/*"
-//       },
-//       {
-//           "Effect": "Allow",
-//           "Principal": "*",
-//           "Action": "s3:ListBucket",
-//           "Resource": "arn:aws:s3:::soa3final150145-dev",
-//           "Condition": {
-//               "StringLike": {
-//                   "s3:prefix": [
-//                       "public/",
-//                       "public/*",
-//                       "private/${cognito-identity.amazonaws.com:sub}/",
-//                       "private/${cognito-identity.amazonaws.com:sub}/*"
-//                   ]
-//               }
-//           }
-//       }
-//   ]
-// }

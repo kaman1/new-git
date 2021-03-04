@@ -8,7 +8,7 @@ import { ThemeProvider } from "styled-components";
 import { Base, theme } from "@rent_avail/base";
 import { Container, Stack, Card } from "@rent_avail/layout";
 import { Heading } from "@rent_avail/typography";
-import {  AmplifySignOut } from "@aws-amplify/ui-react";
+import { AmplifySignOut } from "@aws-amplify/ui-react";
 import { Auth } from "aws-amplify";
 
 function EditExplore() {
@@ -23,7 +23,7 @@ function EditExplore() {
 
   async function fetchPost() {
     let user = await Auth.currentAuthenticatedUser();
-    setUser(user.attributes.email);
+    setUser(user.username);
   }
 
   const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile });
@@ -64,7 +64,7 @@ function EditExplore() {
   );
 }
 
-export default (EditExplore);
+export default EditExplore;
 
 const Container1 = styled.div`
   display: flex;
