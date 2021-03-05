@@ -159,7 +159,7 @@ function Maps() {
         height="100vh"
         {...viewport}
         mapboxApiAccessToken={TOKEN}
-        mapStyle={"mapbox://styles/mapbox/basic-v9"}
+        mapStyle={"mapbox://styles/2enovate/ckiouxd2s0hzv17pupsdm521i"}
         onViewportChange={(nextViewport) => setViewport(nextViewport)}
       >
         <Pins data={post} onClick={setPopupInfo} />
