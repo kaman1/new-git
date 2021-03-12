@@ -11,7 +11,7 @@ import {
 } from "@rent_avail/select";
 import { Text, Heading } from "@rent_avail/typography";
 import { Button } from "@rent_avail/controls";
-import { FullscreenFeedback } from "@rent_avail/feedback";
+import { FullscreenFeedback, InlineFeedback } from "@rent_avail/feedback";
 import { ThemeProvider } from "styled-components";
 import { Base, theme } from "@rent_avail/base";
 import styled from "styled-components";
@@ -20,6 +20,14 @@ import { useForm } from "react-hook-form";
 import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import Amplify, { Storage } from "aws-amplify";
 
+import {
+  Dialog,
+  DialogTarget,
+  DialogHeader,
+  FullscreenDialog,
+  ConfirmationDialog,
+} from "@rent_avail/dialog";
+
 import { API, graphqlOperation } from "aws-amplify";
 import { createPost } from "../../../graphql/mutations";
 
@@ -27,7 +35,6 @@ import { Link } from "react-router-dom";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 
 import awsConfig from "../../../aws-exports";
-import { justifyContent } from "styled-system";
 Amplify.configure(awsConfig);
 
 const {
@@ -46,10 +53,15 @@ function Form() {
   const [response, setResponse] = useState("");
   const [imageUploaded, setImage] = useState("");
 
+  const [loaded, setLoaded] = useState(false);
+  function handleToggle() {
+    setOpen(false);
+    setLoaded(false);
+  }
+
   const refreshPage = async () => {
     await window.location.reload();
   };
-  console.log(response);
 
   const onChange = (e) => {
     e.preventDefault();
@@ -263,7 +275,7 @@ function Form() {
               />
               <InputTime
                 icon={AccessTimeIcon}
-                label="Time (H:Min)"
+                label="Time"
                 name="obsvtime"
                 defaultValue=""
                 autoComplete="off"
@@ -271,29 +283,53 @@ function Form() {
               />
             </div>
 
-            <SubmitForm type="submit" onClick={(e) => setOpen(true)}>
+            <SubmitForm type="submit" onClick={(e) => setOpen(!open)}>
               Submit observation
             </SubmitForm>
           </Box>
-          <FullscreenFeedback
-            open={open}
-            steps={[
-              "Checking your location",
-              "Verifying your credentials",
-              "Sending your observation",
-            ]}
-            success={<Heading as="h4">Observation Submitted</Heading>}
-            onAnimationEnd={() =>
-              setTimeout(() => setOpen(false), 1000, refreshPage())
-            }
-          />
+          <Dialog open={open} toggle={handleToggle} id="confirmation-id">
+            <ConfirmationDialog>
+              <InlineFeedback
+                steps={[
+                  "Optimizing your photo",
+                  "Connecting to the cloud",
+                  "Uploading your observation",
+                ]}
+                onAnimationEnd={() => setLoaded(true)}
+              />
+              {loaded && (
+                <Box
+                  initial={{ opacity: 0, y: "1rem" }}
+                  animate={{ opacity: 1, y: 0 }}
+                  mt="2rem"
+                >
+                  <Btn onClick={() => refreshPage()}>CLOSE</Btn>
+                  <Heading as="h3" color="#52b69a" fontWeight="bold">
+                    Observation Published
+                  </Heading>
+                </Box>
+              )}
+            </ConfirmationDialog>
+          </Dialog>
         </Container>
+        <div style={{ padding: 200 }} />
       </Wrapper>
     </ThemeProvider>
   );
 }
 
 export default withAuthenticator(Form);
+
+const Btn = styled.button`
+  border: none;
+  color: #fff;
+  background: orange;
+  padding: 8px;
+  font-size: 35;
+  top: 25px;
+  right: 25px;
+  position: absolute;
+`;
 
 const InputData = styled(Input)`
   border-color: #00296b;

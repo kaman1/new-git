@@ -18,7 +18,7 @@
       "function": {
         "soaproduction161ca5d3PostConfirmation": {
           "deploymentBucketName": "amplify-soaproduction-dev-151550-deployment",
-          "s3Key": "amplify-builds/soaproduction161ca5d3PostConfirmation-313161736c796d756177-build.zip"
+          "s3Key": "amplify-builds/soaproduction161ca5d3PostConfirmation-6b6c716b3148754d306a-build.zip"
         }
       },
       "hosting": {

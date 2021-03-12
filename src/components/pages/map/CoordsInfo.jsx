@@ -11,8 +11,6 @@ function CoordsInfo(props, onClick) {
   const { info } = props;
   const image = info.image;
 
- 
-
   return (
     <>
       <Container>
@@ -100,8 +98,8 @@ const Icon = styled.div`
   align-items: center;
   color: #00296b;
   background-color: orange;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   border-radius: 20px;
 `;
 const IconLatLon = styled.div`
@@ -110,8 +108,8 @@ const IconLatLon = styled.div`
   align-items: center;
   color: #00296b;
   background-color: #00bbf9;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   border-radius: 20px;
 `;
 const IconIMO = styled.div`
@@ -120,8 +118,8 @@ const IconIMO = styled.div`
   align-items: center;
   color: #00296b;
   background-color: #9b5de5;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   border-radius: 20px;
 `;
 const NM = styled.div`
@@ -130,8 +128,8 @@ const NM = styled.div`
   align-items: center;
   color: #00296b;
   background-color: #43aa8b;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   border-radius: 20px;
 `;
 const Bearing = styled.div`
@@ -139,9 +137,9 @@ const Bearing = styled.div`
   justify-content: center;
   align-items: center;
   color: #fff;
-  background-color: #7400b8;
-  width: 40px;
-  height: 40px;
+  background-color: #7250b8;
+  width: 25px;
+  height: 25px;
   border-radius: 20px;
 `;
 const Deg = styled.div`
@@ -150,19 +148,19 @@ const Deg = styled.div`
   align-items: center;
   color: #00296b;
   background-color: #caf0f8;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   border-radius: 20px;
 `;
 const SpanDesc = styled.div`
-  font-size: 17px;
+  font-size: 13px;
   font-weight: bold;
   background-color: #141f2e;
   color: #fff;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 50px;
+  height: 35px;
   padding-left: 20px;
   margin: 5px;
 `;
@@ -171,7 +169,7 @@ const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
+  height: 130px;
   margin: 5px;
 `;
 const Btn = styled.div`
@@ -182,14 +180,14 @@ const Btn = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 50px;
+  height: 40px;
   margin-bottom: 5px;
 `;
 
 const ImageLink = styled.a`
   background-color: #009266;
   color: #fff;
-  padding: 17px;
+  padding: 10px;
   position: relative;
   width: 100%;
   text-decoration: none;
@@ -204,7 +202,7 @@ const ImageLink = styled.a`
 `;
 
 const Img = styled.img`
-  height: 200px;
+  height: 130px;
   width: auto;
   background-size: cover;
   overflow: hidden;
@@ -218,6 +216,6 @@ const Container = styled.div`
   /* margin-top: 100px; */
   z-index: 1;
   background-color: #23303e;
-  width: 300px;
+  width: 200px;
   height: auto;
 `;

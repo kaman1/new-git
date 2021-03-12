@@ -6,7 +6,7 @@ import { Text, Heading } from "@rent_avail/typography";
 import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 import { DeviceSize } from "../../navbar/responsive";
-import "./impact.css"
+import "./impact.css";
 
 function Impact() {
   const visible = useMediaQuery({ maxWidth: DeviceSize.mobile });
@@ -18,11 +18,11 @@ function Impact() {
         <Container as={Stack}>
           {visible ? (
             <HeadetTitle>
-              <Title as="h4">About Over The Horizon</Title>
+              <Title as="h4">About</Title>
             </HeadetTitle>
           ) : (
             <HeadetTitle>
-              <Title as="h3">About Over The Horizon</Title>
+              <Title as="h3">About</Title>
             </HeadetTitle>
           )}
 
@@ -43,18 +43,18 @@ function Impact() {
             Zones, and dangerous maneuvers involving multiple ships.
             <br />
             <br />
-            Over The Horizon, short for “maritime neighborhood watch”, is designed to
-            increase transparency of events occurring at sea. Through a process
-            known as participatory mapping, it is possible for law-abiding
-            individuals to coordinate the detection, identification, and
-            tracking of malign activities. Over The Horizon facilitates this process
-            through a community-based data collection application that leverages
-            users’ existing technology (smartphones with cameras and GPS) in
-            order to crowdsource information about events occurring at sea. This
-            data can then broadcast worldwide for free via the internet in order
-            to increase awareness, conduct academic research, and aid government
-            enforcement operations which ultimately protect local livelihoods
-            and territorial sovereignty within participating countries.
+            Over The Horizon, is designed to increase transparency of events
+            occurring at sea. Through a process known as participatory mapping,
+            it is possible for law-abiding individuals to coordinate the
+            detection, identification, and tracking of malign activities. Over
+            The Horizon facilitates this process through a community-based data
+            collection application that leverages users’ existing technology
+            (smartphones with cameras and GPS) in order to crowdsource
+            information about events occurring at sea. This data can then
+            broadcast worldwide for free via the internet in order to increase
+            awareness, conduct academic research, and aid government enforcement
+            operations which ultimately protect local livelihoods and
+            territorial sovereignty within participating countries.
             {"\n"}
             {"\n"}
           </DescCard>
